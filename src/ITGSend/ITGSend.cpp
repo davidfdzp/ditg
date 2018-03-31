@@ -3338,7 +3338,7 @@ void *flowSender(void *para)
 				indexVectTime = (indexVectTime + 1) % dimVectTime;
 			}
 
-			PRINTD(2,"flowSender: IDT for next packet %f ms\n",wait);
+			PRINTD(2,"flowSender: IDT for next packet %f ms\n", wait);
 
 			UPDATE_TICKER(&Ticker, _tend, _tprec, _tstart, first_update);
 			if (flows[id].mean_adjustment == 0) 
@@ -3484,7 +3484,8 @@ void *flowSender(void *para)
 			PRINTD(1,"flowSender: offDuration = %lf\n",OffDuration);
 			
 			ms_sleep(WaitTime);
-			
+			// TODO: 
+			UPDATE_TICKER(&Ticker, _tend, _tprec, _tstart, first_update);
 			OnDuration = (double) OnPeriod->Next();
 			PRINTD(1,"flowSender: On Duration = %lf\n",OnDuration);
 		}
